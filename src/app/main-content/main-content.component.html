@@ -22,17 +22,23 @@
                     <th>
                         <div class="btn-group pull-right">
                             td><button type="button" class="btn btn-success">Save</button>
-                            td><button type="button" class="btn btn-info">Add</button>
+                            td><button type="button" class="btn btn-info" (click)="add.Student()">Add</button>
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Programming</td>
-                    <td><button type="button" class="btn btn-danger pull-right">X</button>
+                <tr *ngFor="let Student of studentArray; let i= index">
+                    <th *ngIf="!editMode===false" scope="row">{{ student.ID }}</th>
+                    <td *ngIf="!editMode===false">{{ student.firstName }}</td>
+                    <td *ngIf="!editMode===false">{{ student.lastName }}</td>
+                    <td *ngIf="!editMode===false">{{ student.course }}</td>
+
+                    <th scope="row">{{ student.ID }}</th>
+                    <td>{{ student.firstName }}</td>
+                    <td>{{ student.lastName }}</td>
+                    <td>{{ student.course }}</td>
+
+                    <td><button type="button" class="btn btn-danger pull-right"(click)="removeStudent(i)">X</button>
                 </tr>
 
             </tbody>

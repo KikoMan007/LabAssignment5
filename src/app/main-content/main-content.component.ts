@@ -1,5 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { flushModuleScopingQueueAsMuchAsPossible } from '@angular/core/src/render3/jit/module';
+
+interface IStudent {
+  id: number;
+  firstName: string;
+  lastName: string;
+  course: string;
+  editMode: boolean;
+
+
+
+
+}
+
 
 @Component({
   selector: 'app-main-content',
@@ -8,7 +20,7 @@ import { flushModuleScopingQueueAsMuchAsPossible } from '@angular/core/src/rende
 })
 export class MainContentComponent implements OnInit {
 
-  private studentArray = [];
+  studentArray: Array<IStudent> = [];
   constructor() { }
 
   ngOnInit() {
@@ -17,21 +29,46 @@ export class MainContentComponent implements OnInit {
         id: 1,
         firstName: 'Michael',
         lastName: 'Asavamedhi',
-        course: 'Programming'
+        course: 'Programming',
+        editMode: false
+
       },
       {
         id: 2,
         firstName: 'Mike',
         lastName: 'Tyson',
-        course: 'Boxing'
+        course: 'Boxing',
+        editMode: false
       },
       {
         id: 3,
         firstName: 'Steve',
         lastName: 'Jobs',
-        course: 'Programming'
-      }
+        course: 'Programming',
+        editMode: false
+
+      },
+
+
     ];
   }
+  addStudent() {
+    this.studentArray.unshift({
 
+      id: null,
+      firstName: 'Michael',
+      lastName: 'Asavamedhi',
+      course: 'Programming',
+      editMode: true,
+
+    });
+
+  }
+  removeStudent(index: number) {
+    console.log('index', index);
+    this.studentArray.splice(index, 1);
+
+  }
 }
+
+
