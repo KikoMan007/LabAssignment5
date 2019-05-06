@@ -21,6 +21,8 @@ interface IStudent {
 export class MainContentComponent implements OnInit {
 
   studentArray: Array<IStudent> = [];
+  disableAddbutton = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -62,11 +64,20 @@ export class MainContentComponent implements OnInit {
       editMode: true,
 
     });
+    this.disableAddbutton = true;
+
 
   }
   removeStudent(index: number) {
     console.log('index', index);
     this.studentArray.splice(index, 1);
+
+  }
+  saveStudent() {
+    this.studentArray[0].editMode = false;
+    this.disableAddbutton = false;
+
+
 
   }
 }
