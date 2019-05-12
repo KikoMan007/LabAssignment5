@@ -2,72 +2,79 @@
     <div class="container-padding">
         r2c1
     </div>
+
     <div class="container-padding">
         <!-- <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-success">Success</button>
-             -->
-        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+ -->
+
+
+        <!-- <button type="button" class="btn btn-warning">Warning</button>
         <button type="button" class="btn btn-info">Info</button>
         <button type="button" class="btn btn-light">Light</button>
         <button type="button" class="btn btn-dark">Dark</button>
-        <h3>Raised Buttons</h3>
-        <div class="example-button-row">
+        <h3>Raised Buttons</h3> -->
+
+        <!-- <div class="example-button-row">
             <button mat-raised-button>Basic</button>
             <button mat-raised-button color="primary">Primary</button>
             <button mat-raised-button color="accent">Accent</button>
             <button mat-raised-button color="warn">Warn</button>
             <button mat-raised-button disabled>Disabled</button>
             <a mat-raised-button routerLink=".">Link</a>
-        </div>
-        -->
+        </div> -->
+
+
         <table class="table">
             <thead class="thead-dark">
-
                 <th scope="col">ID</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Courses</th>
 
                 <div class="btn-group pull-right">
-                    td><button type="button" class="btn btn-success" (click)="saveStudent()">Save</button>
-                    td><button type="button" class="btn btn-info" [disabled]="disableAddButton"
-                        (click)="add.Student()">Add</button>
+                    <td> <button type="button" mat-raised-button color="primary" (click)="saveStudent()">Save</button>
+                    <td> <button type="button" mat-raised-button color="warn" (click)="add.Student()">add</button>
+                    </td>
+
 
 
 
             <tbody>
-                <tr *ngFor="let Student of studentArray; let i= index">
-                    <th *ngIf="!student.editMode===false" scope="row">{{ student.ID }}</th>
-                    <td *ngIf="student.editMode===false">{{ student.firstName }}</td>
-                    <td *ngIf="student.editMode===false">{{ student.lastName }}</td>
-                    <td *ngIf="student.editMode===false">{{ student.course }}</td>
-
-                    <th *ngIf="student.editMode" scope="row">
-                        <input [(ngModel)]="student.ID" type="text" class="form-control" placeholder="ID">
-
-
-                        *ngIf="student.editMode"><input [(ngModel)]="student.firstName" type="text" class="First Name"
-                            placeholder="ID">
-
-
-
-                        *ngIf="student.editMode"><input [(ngModel)]="student.lastName" type="text" class="Last Name"
-                            placeholder="ID">
-
-
-                        *ngIf="student.editMode"><input [(ngModel)]="student.course" type="text" class="Course"
-                            placeholder="ID">
+                <th *ngFor="let Student of studentArray; let i= index">
+                <td *ngIf="!student.editMode===false" scope="row">{{ student.ID }}</td>
+                <td *ngIf="student.editMode===false">{{ student.firstName }}</td>
+                <td *ngIf="student.editMode===false">{{ student.lastName }}</td>
+                <td *ngIf="student.editMode===false">{{ student.course }}</td>
 
 
 
 
-                    <td><button type="button" class="btn btn-danger pull-right" (click)="removeStudent(i)">X</button>
+                <th *ngIf="student.editMode" scope="row">
+                    <input [(ngModel)]="student.ID" type="text" class="form-control" placeholder="ID">
+
+
+                    *ngIf="student.editMode"><input [(ngModel)]="student.firstName" type="text" class="First Name"
+                        placeholder="ID">
 
 
 
-        </table>
+                    *ngIf="student.editMode"><input [(ngModel)]="student.lastName" type="text" class="Last Name"
+                        placeholder="ID">
+
+
+                    *ngIf="student.editMode"><input [(ngModel)]="student.course" type="text" class="Course"
+                        placeholder="ID">
+
+
+
+
+                <td><button type="button" class="btn btn-danger pull-right" (click)="removeStudent(i)">X</button>
+                </td>
+            </tbody>
     </div>
+    
     <div class="container-padding">
         r2c3
-    </div>
+ 
